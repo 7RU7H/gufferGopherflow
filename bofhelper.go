@@ -65,8 +65,6 @@ func outputBadChars(blacklistSet []string) string {
 	}
 }
 
-func enumBadChars() []byte {}
-
 //Reverse a string slice into string
 func reverseSStoS(s []string) string {
 	builder := strings.Builder{}
