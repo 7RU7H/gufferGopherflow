@@ -27,6 +27,24 @@ func enumRSP(m, n int) (result []byte) {
 	return result
 }
 
+func createOffsetFuzzer(n int) string {
+	builder := strings.Builder{}
+	counter := 0
+	letters := []string{"0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
+	for j := 1; j <= 52; j++ {
+		for k := 1; k <= 52; k++ {
+			for l := 1; l <= 52; l++ {
+				builder.WriteString(letters[j] + letters[k] + letters[l])
+				counter++
+				if (counter) == n {
+					return builder.String()
+				}
+			}
+		}
+	}
+	return "0"
+}
+
 //
 func userInputBadChars() {}
 
